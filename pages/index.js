@@ -14,8 +14,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { InfoOutlined } from '@mui/icons-material';
-import { Search, SearchIconWrapper } from './Search';
-import { StyledInputBase } from './StyledInputBase';
+import { Search, SearchIconWrapper } from '../components/Search';
+import { StyledInputBase } from '../components/StyledInputBase';
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
