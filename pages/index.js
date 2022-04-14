@@ -16,6 +16,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { InfoOutlined } from '@mui/icons-material';
 import { Search, SearchIconWrapper } from '../components/Search';
 import { StyledInputBase } from '../components/StyledInputBase';
+import Head from 'next/head';
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -129,6 +130,9 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+    <Head>
+      <title>Nome do Sistema</title>
+    </Head>
       {appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen)}
       {renderMobileMenu}
       {renderMenu}
