@@ -9,6 +9,8 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 
+import ImageAvatar from "./Avatar";
+
 import CircleIcon from '@mui/icons-material/Circle';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import PeopleIcon from '@mui/icons-material/People';
@@ -20,6 +22,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 import HelpIcon from '@mui/icons-material/Help';
 import LogoutIcon from '@mui/icons-material/Logout';
+
+import { common } from '@mui/material/colors';
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -49,10 +53,10 @@ export default function TemporaryDrawer() {
           <ListItem button key={text}>
             <ListItemIcon>
                 {index === 0 
-                    ? <AdminPanelSettingsIcon /> 
+                    ? <AdminPanelSettingsIcon sx={{ color: common.black }}/> 
                     : index === 1 
-                        ? <PeopleIcon /> 
-                        : <CircleIcon/>}
+                        ? <PeopleIcon sx={{ color: common.black }}/> 
+                        : <CircleIcon sx={{ color: common.black }}/>}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -64,16 +68,16 @@ export default function TemporaryDrawer() {
           <ListItem button key={text}>
             <ListItemIcon>
                 {index === 0 
-                    ? <PlaylistPlayIcon /> 
+                    ? <PlaylistPlayIcon sx={{ color: common.black }}/> 
                     : index === 1 
-                        ? <ViewInArIcon /> 
+                        ? <ViewInArIcon sx={{ color: common.black }}/> 
                         : index === 2 
-                            ? <LocalPrintshopIcon /> 
+                            ? <LocalPrintshopIcon sx={{ color: common.black }}/> 
                             : index === 3 
-                                ? <SettingsIcon /> 
+                                ? <SettingsIcon sx={{ color: common.black }}/> 
                                 : index === 4 
-                                    ? <HelpIcon /> 
-                                    : <CircleIcon/>}
+                                    ? <HelpIcon sx={{ color: common.black }}/> 
+                                    : <CircleIcon sx={{ color: common.black }}/>}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -85,10 +89,10 @@ export default function TemporaryDrawer() {
           <ListItem button key={text}>
             <ListItemIcon>
                 {index === 0 
-                    ? <HelpIcon /> 
+                    ? <HelpIcon sx={{ color: common.black }}/> 
                     : index === 1 
-                        ? <LogoutIcon /> 
-                        : <CircleIcon/>}
+                        ? <LogoutIcon sx={{ color: common.black }}/> 
+                        : <CircleIcon sx={{ color: common.black }}/>}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -114,7 +118,8 @@ export default function TemporaryDrawer() {
             anchor={'left'}
             open={state['left']}
             onClose={toggleDrawer('left', false)}
-          >
+            >
+            <ImageAvatar/>
             {list('left')}
         </Drawer>
     </div>
