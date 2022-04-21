@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
@@ -17,6 +16,7 @@ import { InfoOutlined } from '@mui/icons-material';
 import { Search, SearchIconWrapper } from '../components/Search';
 import { StyledInputBase } from '../components/StyledInputBase';
 import Head from 'next/head';
+import TemporaryDrawer from "../components/Drawer"
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -142,7 +142,7 @@ export default function PrimarySearchAppBar() {
 function appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen) {
   return <AppBar position="static">
     <Toolbar>
-      <IconButton
+      {/* <IconButton
         size="large"
         edge="start"
         color="inherit"
@@ -150,7 +150,8 @@ function appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobil
         sx={{ mr: 2 }}
       >
         <MenuIcon />
-      </IconButton>
+      </IconButton> */}
+      <TemporaryDrawer />
       <Typography
         variant="h6"
         noWrap
