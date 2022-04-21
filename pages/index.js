@@ -18,6 +18,9 @@ import { StyledInputBase } from '../components/StyledInputBase';
 import Head from 'next/head';
 import TemporaryDrawer from "../components/Drawer"
 
+import ClienteCard from "../components/cards/cardCliente"
+import ProdutoCard from "../components/cards/cardProduto"
+
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -130,17 +133,23 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-    <Head>
-      <title>Nome do Sistema</title>
-    </Head>
+      <Head>
+        <title>Nome do Sistema</title>
+      </Head>
       {appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen)}
       {renderMobileMenu}
       {renderMenu}
+      <Box sx={{padding: 2}}>
+        <ClienteCard />
+      </Box>
+      <Box sx={{padding: 2}}>
+        <ProdutoCard />
+      </Box>
     </Box>
   );
 }
 function appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen) {
-  return <AppBar position="static">
+  return <AppBar position="sticky">
     <Toolbar>
       {/* <IconButton
         size="large"
