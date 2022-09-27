@@ -23,7 +23,7 @@ export default function ProdutoCard() {
           Produtos
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          Total de Proutos: 249
+          Total de Produtos: 249
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Em falta no estoque: 23
