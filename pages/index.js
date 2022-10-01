@@ -116,7 +116,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Você</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
