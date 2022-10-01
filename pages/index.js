@@ -49,7 +49,7 @@ export default function PrimarySearchAppBar() {
   };
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
+  const renderYouSubMenu = (
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
@@ -71,9 +71,10 @@ export default function PrimarySearchAppBar() {
             <AssignmentIndIcon />
           {/* </Badge> */}
         </IconButton>
-        <p>Perfil</p></MenuItem>
+        <p>Perfil</p>
+      </MenuItem>
       <MenuItem onClick={handleMenuClose}>
-      <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           {/* <Badge badgeContent={4} color="error"> */}
             <ManageAccountsIcon />
           {/* </Badge> */}
@@ -84,7 +85,7 @@ export default function PrimarySearchAppBar() {
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
+  const renderAuxMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
@@ -153,8 +154,8 @@ export default function PrimarySearchAppBar() {
         <title>Nome do Sistema</title>
       </Head>
       {appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen)}
-      {renderMobileMenu}
-      {renderMenu}
+      {renderAuxMenu}
+      {renderYouSubMenu}
       <Box sx={{padding: 2}}>
         <ClienteCard />
       </Box>
@@ -195,7 +196,7 @@ function appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobil
       </Search>
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>
@@ -219,7 +220,7 @@ function appBarFunction(menuId, handleProfileMenuOpen, mobileMenuId, handleMobil
           color="inherit"
         >
           <AccountCircle />
-        </IconButton>
+        </IconButton> */}
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
         <IconButton
