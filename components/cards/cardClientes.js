@@ -6,33 +6,21 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
-export default function ProdutoCard() {
-  return (
+export function cardClientes() {
+  return <Box sx={{ padding: 2 }}>
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div">
-          Produtos
+          Clientes
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          Total de Produtos: 249
+          Total de Clientes: 57
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Em falta no estoque: 23
-        </Typography>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Próximo do vencimento: 12
+          Clientes Especiais: 7
         </Typography>
         <Typography variant="body2">
-          Nenhum Produto Inativo
+          Nenhum Cliente Inativo
           <br />
           {'"situação normal"'}
         </Typography>
@@ -43,5 +31,5 @@ export default function ProdutoCard() {
         <Button size="small">Relatório</Button>
       </CardActions>
     </Card>
-  );
+  </Box>;
 }

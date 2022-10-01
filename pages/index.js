@@ -6,8 +6,11 @@ import { appMainBar } from '../components/menus/appMainBar';
 import { auxMenu } from '../components/menus/auxMenu';
 import { subMnenuYou } from '../components/menus/subMenuYou';
 
-import ClienteCard from "../components/cards/cardCliente"
-import ProdutoCard from "../components/cards/cardProduto"
+import { cardClientes } from '../components/cards/cardClientes';
+import { cardProdutos } from '../components/cards/cardProdutos';
+
+const renderCardClientes = cardClientes();
+const renderCardProdutos = cardProdutos();
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -36,8 +39,8 @@ export default function PrimarySearchAppBar() {
   const menuId = 'primary-search-account-menu';
   const mobileMenuId = 'primary-search-account-menu-mobile';
 
-  const renderYouSubMenu = subMnenuYou(anchorEl, menuId, isMenuOpen, handleMenuClose);
   const renderAuxMenu = auxMenu(mobileMoreAnchorEl, mobileMenuId, isMobileMenuOpen, handleMobileMenuClose, handleProfileMenuOpen);
+  const renderYouSubMenu = subMnenuYou(anchorEl, menuId, isMenuOpen, handleMenuClose);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -47,12 +50,8 @@ export default function PrimarySearchAppBar() {
       {appMainBar(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen)}
       {renderAuxMenu}
       {renderYouSubMenu}
-      <Box sx={{padding: 2}}>
-        <ClienteCard />
-      </Box>
-      <Box sx={{padding: 2}}>
-        <ProdutoCard />
-      </Box>
+      {renderCardClientes}
+      {renderCardProdutos}
     </Box>
   );
 }
