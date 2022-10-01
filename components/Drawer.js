@@ -25,7 +25,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 import { common } from '@mui/material/colors';
 
-export default function TemporaryDrawer() {
+export default function AppMainMenu() {
   const [state, setState] = React.useState({
     top: false,
     left: false,
