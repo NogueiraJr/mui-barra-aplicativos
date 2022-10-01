@@ -21,6 +21,9 @@ import TemporaryDrawer from "../components/Drawer"
 import ClienteCard from "../components/cards/cardCliente"
 import ProdutoCard from "../components/cards/cardProduto"
 
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -62,8 +65,21 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Conta</MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          {/* <Badge badgeContent={4} color="error"> */}
+            <AssignmentIndIcon />
+          {/* </Badge> */}
+        </IconButton>
+        <p>Perfil</p></MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+      <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          {/* <Badge badgeContent={4} color="error"> */}
+            <ManageAccountsIcon />
+          {/* </Badge> */}
+        </IconButton>
+        <p>Conta</p>
+      </MenuItem>
     </Menu>
   );
 
