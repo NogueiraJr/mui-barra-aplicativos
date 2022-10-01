@@ -9,8 +9,7 @@ import { subMnenuYou } from '../components/menus/subMenuYou';
 import { cardClientes } from '../components/cards/cardClientes';
 import { cardProdutos } from '../components/cards/cardProdutos';
 
-const renderCardClientes = cardClientes();
-const renderCardProdutos = cardProdutos();
+import { TitleApp } from '../components/functions/functionsInfos';
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,14 +41,17 @@ export default function PrimarySearchAppBar() {
   const renderAuxMenu = auxMenu(mobileMoreAnchorEl, mobileMenuId, isMobileMenuOpen, handleMobileMenuClose, handleProfileMenuOpen);
   const renderYouSubMenu = subMnenuYou(anchorEl, menuId, isMenuOpen, handleMenuClose);
 
+  const renderCardClientes = cardClientes();
+  const renderCardProdutos = cardProdutos();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Head>
-        <title>Nome do Sistema</title>
-      </Head>
+      <Head><title>{TitleApp()}</title></Head>
       {appMainBar(menuId, handleProfileMenuOpen, mobileMenuId, handleMobileMenuOpen)}
+
       {renderAuxMenu}
       {renderYouSubMenu}
+
       {renderCardClientes}
       {renderCardProdutos}
     </Box>
