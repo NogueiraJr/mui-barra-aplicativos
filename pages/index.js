@@ -2,12 +2,12 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Head from 'next/head';
 
+import { cardClientes } from '../components/cards/cardClientes';
+import { cardProdutos } from '../components/cards/cardProdutos';
+
 import { appMainBar } from '../components/menus/appMainBar';
 import { auxMenu } from '../components/menus/auxMenu';
 import { subMnenuYou } from '../components/menus/subMenuYou';
-
-import { cardClientes } from '../components/cards/cardClientes';
-import { cardProdutos } from '../components/cards/cardProdutos';
 
 import { TitleApp } from '../components/functions/functionsInfos';
 
